@@ -1,0 +1,29 @@
+<form class="aui">
+    <div>
+        <input type="text" class="text" value="$proposedBranchName" id="branchName" readonly style="max-width: calc(100% - 20px);">
+        <div id="btnClipboard" onclick="copyToClipboard()" class="aui-icon aui-icon-small aui-iconfont-paste-table-column"
+             style="position: absolute; right:0; top: 50%; transform: translate(0, -50%);">Clipboard</div>
+    </div>
+</form>
+
+<script>
+    function addClipboardListener() {
+        var btnClipboard = document.getElementById("btnClipboard");
+        btnClipboard.addEventListener('click', ()=> {
+            var copyText = document.getElementById("branchName");
+            navigator.clipboard.writeText(copyText.value).then(()=>console.log("done"), (e)=>console.error(e))
+        })
+    }
+
+    function copyToClipboard() {
+        // Get the text field
+        const copyText = document.getElementById("branchName");
+
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value).then(()=>console.log("copied: ", copyText.value), (e)=>console.error(e));
+    }
+</script>
