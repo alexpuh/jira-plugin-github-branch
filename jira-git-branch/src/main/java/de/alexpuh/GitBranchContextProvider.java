@@ -36,7 +36,7 @@ public class GitBranchContextProvider extends AbstractJiraContextProvider {
         sb.append("-");
 
         Boolean lastReplaced=false;
-        for (char c : issueSummary.toCharArray()) {
+        for (char c : issueSummary.trim().toCharArray()) {
             /*
             if (c == ' ') {
                 if (!lastReplaced) {
@@ -46,7 +46,7 @@ public class GitBranchContextProvider extends AbstractJiraContextProvider {
             } else
              */
             if (Character.isLetterOrDigit(c) || allowedSymbols.indexOf(c) >= 0) {
-                sb.append(c);
+                sb.append(Character.toLowerCase(c));
                 lastReplaced = false;
             } else {
                 if (!lastReplaced) {

@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.alexpuh.jira-plugins</groupId>
     <artifactId>jira-git-branch</artifactId>
-    <version>1.0.5-beta.5-SNAPSHOT</version>
+    <version>1.0.5-beta.7-SNAPSHOT</version>
     <organization>
         <name>Alexej Puchovski</name>
-        <url>https://www.alexej.puchovski.com/</url>
+        <url>https://www.alexej.puchovski.de/</url>
     </organization>
     <name>Git Branch on the 'View Issue' page</name>
     <description>This is the plugin for Atlassian JIRA to show the proposed GIT-Branch name for an Issue.</description>
